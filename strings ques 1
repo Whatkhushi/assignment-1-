@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+std::string rotateLeft(const std::string& str, int k) {
+    int n = str.length();
+    k = k % n; // Handle the case where k is greater than the length of the string
+
+    // Rotate the string to the left
+    return str.substr(k) + str.substr(0, k);
+}
+
+int main() {
+    std::string inputString = "abcdef";
+    int rotationCount = 2;
+
+    std::string rotatedString = rotateLeft(inputString, rotationCount);
+
+    // Output the rotated string
+    std::cout << "Original string: " << inputString << std::endl;
+    std::cout << "Rotated string (left): " << rotatedString << std::endl;
+
+    return 0;
+}
