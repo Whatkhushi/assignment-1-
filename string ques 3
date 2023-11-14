@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    // Using the + operator
+    std::string str1 = "Hello, ";
+    std::string str2 = "World!";
+    std::string result = str1 + str2;
+
+    std::cout << "Concatenated string using + operator: " << result << std::endl;
+
+    // Using the append method
+    std::string str3 = "Goodbye, ";
+    std::string str4 = "cruel world!";
+    str3.append(str4);
+
+    std::cout << "Concatenated string using append method: " << str3 << std::endl;
+
+    return 0;
+}
