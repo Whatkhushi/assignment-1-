@@ -1,0 +1,42 @@
+#include <iostream>
+#include <cctype>
+
+bool isPalindrome(const std::string& str) {
+    int start = 0;
+    int end = str.length() - 1;
+
+    while (start < end) {
+        // Ignore non-alphanumeric characters from the start
+        while (start < end && !isalnum(str[start])) {
+            start++;
+        }
+
+        // Ignore non-alphanumeric characters from the end
+        while (start < end && !isalnum(str[end])) {
+            end--;
+        }
+
+        // Compare characters after converting to lowercase
+        if (tolower(str[start]) != tolower(str[end])) {
+            return false;
+        }
+
+        // Move the start and end positions towards each other
+        start++;
+        end--;
+    }
+
+    return true;
+}
+
+int main() {
+    std::string str = "A man, a plan, a canal, Panama";
+
+    if (isPalindrome(str)) {
+        std::cout << "The string is a valid palindrome." << std::endl;
+    } else {
+        std::cout << "The string is not a palindrome." << std::endl;
+    }
+
+    return 0;
+}
