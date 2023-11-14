@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cctype>
+
+std::string toLowerCase(const std::string& str) {
+    std::string result = str;
+
+    for (char& c : result) {
+        c = tolower(c);
+    }
+
+    return result;
+}
+
+int main() {
+    std::string originalString = "Hello, World!";
+    std::string lowercasedString = toLowerCase(originalString);
+
+    std::cout << "Original string: " << originalString << std::endl;
+    std::cout << "Lowercased string: " << lowercasedString << std::endl;
+
+    return 0;
+}
